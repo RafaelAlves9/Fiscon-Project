@@ -25,8 +25,6 @@ import { DialogComponent } from './components/modals/dialog-add-user/dialog.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CadastroPageComponent } from './components/pages/cadastro-page/cadastro-page.component';
-import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { UsersPageComponent } from './components/pages/users-page/users-page.component';
 import { DialogEditUserComponent } from './components/modals/dialog-edit-user/dialog-edit-user.component';
 
@@ -34,8 +32,6 @@ import { DialogEditUserComponent } from './components/modals/dialog-edit-user/di
   declarations: [
     AppComponent,
     DialogComponent,
-    CadastroPageComponent,
-    LoginPageComponent,
     UsersPageComponent,
     DialogEditUserComponent
   ],

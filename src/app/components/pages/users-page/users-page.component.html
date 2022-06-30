@@ -1,8 +1,7 @@
 <section class="section-users">
   <mat-toolbar color="primary">
-      <span>Gerenciador de Produtos</span>
+      <span>Gerenciador de Usuários</span>
       <span class="example-spacer"></span>
-      <button color="warn" mat-raised-button (click)="logout()">Logout <mat-icon>logout</mat-icon></button>
   </mat-toolbar>
   <div class="container-table">
   
@@ -11,7 +10,7 @@
         <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
     </mat-form-field>
 
-    <button class="user-button-padrao" mat-raised-button color="primary" (click)="openAddDialog()">Adicionar Produto <mat-icon >control_point</mat-icon></button>
+    <button class="user-button-padrao" mat-raised-button color="primary" (click)="openAddDialog()">Adicionar Usuário <mat-icon >control_point</mat-icon></button>
   
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
@@ -26,26 +25,6 @@
           <td mat-cell *matCellDef="let row"> {{row.name}} </td>
         </ng-container>
   
-        <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoria: </th>
-          <td mat-cell *matCellDef="let row"> {{ row.category }} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="price">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Preço: </th>
-          <td mat-cell *matCellDef="let row"> {{row.price | currency: "R$"}} </td>
-        </ng-container>
-  
-        <ng-container matColumnDef="state">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado: </th>
-          <td mat-cell *matCellDef="let row"> {{row.state}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="disponible">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Disponíveis: </th>
-          <td mat-cell *matCellDef="let row"> {{row.disponible}} </td>
-        </ng-container>
-  
         <ng-container matColumnDef="creationDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Postado em: </th>
           <td mat-cell *matCellDef="let row"> {{row.creationDate | date: 'dd/MM' }} </td>
@@ -54,20 +33,6 @@
         <ng-container matColumnDef="updationDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Atualizado em: </th>
           <td mat-cell *matCellDef="let row"> {{row.updationDate | date: 'dd/MM' }} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="promotion">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Promoção? </th>
-          <td mat-cell *matCellDef="let row">
-            <button *ngIf="row.promotion; else notPromotion" mat-icon-button class="action">
-              <mat-icon color="accent" (click)="setFavorite(row)">beenhere</mat-icon>
-            </button>
-            <ng-template #notPromotion>
-              <button mat-icon-button class="action">
-                <mat-icon (click)="setFavorite(row)">beenhere</mat-icon>
-              </button>
-            </ng-template>
-          </td>
         </ng-container>
   
         <ng-container matColumnDef="actions">
@@ -86,7 +51,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">Não foi achado nenhum produto</td>
+          <td class="mat-cell" colspan="4">Não foi achado nenhum usuário</td>
         </tr>
       </table>
   

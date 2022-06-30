@@ -1,22 +1,5 @@
 {
-  "userList": [
-    {
-      "name": "Hambúrguer",
-      "category": "Alimento",
-      "price": 15,
-      "state": "Seminovo",
-      "disponible": 150,
-      "promotion": false,
-      "creationDate": "2022-06-04T15:50:13.596Z",
-      "updationDate": "2022-06-06T22:42:08.032Z",
-      "id": 1
-    }
-  ],
   "register": [
-    {
-      "email": "teste@gmail.com",
-      "password": "123",
-      "id": 1
-    }
+    
   ]
 }
