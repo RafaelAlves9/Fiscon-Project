@@ -1,0 +1,32 @@
+.section-users{
+  width: 100%;
+  height: 100%;
+  background-color: var(--transparent);
+  /* background-image: linear-gradient(to right top, var(--main-color), var(--second-color)); */
+}
+.user-button-padrao{
+  width: 17%;
+  height: 55px;
+  margin: 0 0 8px 15px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.container-table{
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+}
+table {
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+td{
+  font-weight: 500;
+}
+.action{
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<section class="bg-section-padrao">
+    <form [formGroup]="userLogin"  class="form-padrao">
+        <h1>Cadastre-se</h1>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email" placeholder="Ex. test@example.com">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Create your password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        
+        <button style="margin-top: 10px;" type="submit" class="button-padrao" mat-raised-button color="primary" (click)="verifyUser()">Registrar</button>
+        <div style="padding-top: 20px;">Já possui uma conta cadastrada? <strong style="cursor: pointer;" routerLink="">Faça Login</strong></div>
+    </form>
+</section>

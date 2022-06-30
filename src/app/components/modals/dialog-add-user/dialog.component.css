@@ -1,0 +1,19 @@
+.example-form {
+    width: 100%;
+}
+.example-full-width {
+    width: 100%;
+}
+.input-padrao1{
+    width: 170px;
+}
+.dialog-padrao{
+    width: 100%;
+    max-width: 400px;
+}
+.mat-radio-button{
+    margin-left: 16px;
+}
+.mat-radio{
+    margin: 15px 0;
+}

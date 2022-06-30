@@ -1,0 +1,22 @@
+.login-error{
+  background-color: var(--transparent);
+  color: red;
+  width: 60%;
+  text-align: center;
+}
+.example-full-width {
+  width: 85%;
+}
+  
+.example-right-align {
+  text-align: right;
+}
+  
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

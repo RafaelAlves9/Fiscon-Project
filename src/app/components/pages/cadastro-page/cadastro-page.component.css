@@ -1,0 +1,20 @@
+.form-padrao h1{
+    padding: 30px 0 25px 0;
+}
+
+.example-full-width {
+    width: 85%;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}

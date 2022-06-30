@@ -1,0 +1,61 @@
+<main class="dialog-padrao">
+    <h1 mat-dialog-title>Adicionar produto</h1>
+    <div mat-dialog-content>
+        <form [formGroup]="userForm">
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input formControlName="name" type="text" matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="input-padrao1" style="padding-right: 8px;">
+                <mat-label>Categoria</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option value="Alimento">Alimento</mat-option>
+                    <mat-option value="Eletrodoméstico">Eletrodoméstico</mat-option>
+                    <mat-option value="Construção">Construção</mat-option>
+                    <mat-option value="Moda">Moda</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="input-padrao1">
+                <mat-label>Estado</mat-label>
+                <mat-select formControlName="state">
+                    <mat-option value="Novo">Novo</mat-option>
+                    <mat-option value="Seminovo">Seminovo</mat-option>
+                    <mat-option value="Usado">Usado</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline" class="input-padrao1" style="padding-right: 8px;">
+                <mat-label>Preço</mat-label>
+                <input formControlName="price" type="number" matInput>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width" appearance="outline" class="input-padrao1">
+                <mat-label>Disponíveis</mat-label>
+                <input formControlName="disponible" type="number" matInput>
+            </mat-form-field>
+
+            <div class="mat-radio">
+                <mat-radio-group formControlName="promotion" class="example-full-width" aria-label="Select an option">
+                    <mat-label>Promoção:</mat-label>
+                    <mat-radio-button class="mat-radio-button" [value]=true>Sim</mat-radio-button>
+                    <mat-radio-button class="mat-radio-button" [value]=false>Não</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <mat-form-field appearance="outline" class="example-form-field">
+                <mat-label>Cadastrado em:</mat-label>
+                <input formControlName="creationDate" matInput [matDatepicker]="datepicker">
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker>
+                </mat-datepicker>
+            </mat-form-field>
+        </form>
+    </div>
+    <div [align]="'end'" mat-dialog-actions>
+        <button mat-button mat-dialog-close color="warn">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="saveUser()">Enviar</button>
+    </div>
+</main>
