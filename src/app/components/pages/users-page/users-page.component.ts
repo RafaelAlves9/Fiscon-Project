@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../modals/dialog-add-user/dialog.component';
 import { ApiService } from '../../../services/api.service';
@@ -17,7 +16,7 @@ import { AlertService } from 'src/app/services/alert.service';
 })
 export class UsersPageComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'name', 'category', 'price', 'state', 'disponible', 'creationDate', 'updationDate', 'promotion', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'tel','creationDate', 'updationDate', 'actions'];
   
   dataSource!: MatTableDataSource<any>;
 
@@ -27,21 +26,13 @@ export class UsersPageComponent implements OnInit {
   constructor(
     private dialog : MatDialog,
     private api : ApiService,
-    private router : Router,
     private alert: AlertService
   ) { }
 
   ngOnInit(): void {
     this.getUserList();
-    this.verifyAcess();
   }
   
-  //verifing login to view page content
-  verifyAcess(){
-    if(!localStorage.getItem("user")){
-      this.router.navigate([""])
-    } else return
-  }
   //dialog opening
   openAddDialog(){
       this.dialog.open(DialogComponent)
@@ -49,7 +40,7 @@ export class UsersPageComponent implements OnInit {
         this.getUserList()
       })
     };
-  openEditDialog(user : any) {
+  openEditDialog(user : User) {
     this.dialog.open(DialogEditUserComponent, {
       data: user
     }).afterClosed().subscribe(()=>{
@@ -65,15 +56,6 @@ export class UsersPageComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  //favoring
-  setFavorite(user: User){
-    this.api.setPromotion(user)
-    .subscribe({
-      next:()=>{
-        this.getUserList();
-      }
-    })
-  }
   //api actions
   getUserList(){
     this.api.getUser()
@@ -85,18 +67,13 @@ export class UsersPageComponent implements OnInit {
       }
     })
   }
-  removeUser(user : any){
+  removeUser(user : User){
     this.api.removeUser(user)
     .subscribe({
       next:()=>{
         this.getUserList();
-        this.alert.openAlert(`O produto ${user.name} foi excluído com sucesso`, "Ok")
+        this.alert.openAlert(`O usuário ${user.name} foi excluído com sucesso`, "Ok")
       }
     })
-  }
-  //logout
-  logout(){
-    localStorage.clear()
-    this.router.navigate(["/"])
   }
 }

@@ -24,10 +24,7 @@ export class DialogEditUserComponent implements OnInit {
     this.editForm = this.formBuilder.group({
       id: [this.data.id],
       name: [this.data.name,Validators.required],
-      category: [this.data.category,Validators.required],
-      state: [this.data.state,Validators.required],
-      disponible: [this.data.disponible,Validators.required],
-      price: [this.data.price,Validators.required]
+      tel: [this.data.tel,Validators.required]
     })
   }
   saveEdit(){

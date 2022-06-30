@@ -23,11 +23,7 @@ export class DialogComponent implements OnInit {
     //formulario
     this.userForm = this.formBuilder.group({
       name: ['',Validators.required],
-      category: ['',Validators.required],
-      price: ['',Validators.required],
-      state: ['',Validators.required],
-      disponible: ['',Validators.required],
-      promotion : ['',Validators.required],
+      tel: ['',Validators.required],
       creationDate : [new Date(),Validators.required],
       updationDate : [''],
     })
@@ -43,6 +39,5 @@ export class DialogComponent implements OnInit {
           this.dialogRef.close()
         }
       })
-    } 
-  }
+    }}
 }
