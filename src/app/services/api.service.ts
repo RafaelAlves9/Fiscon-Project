@@ -6,7 +6,7 @@ import { User } from '../Types/Types';
   providedIn: 'root'
 })
 export class ApiService {
-  url: string = "http://localhost:3000/userList/";
+  url: string = "http://localhost:3000/register/";
 
   constructor(private http : HttpClient) { }
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { MatDialogRef } from '@angular/material/dialog';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from 'src/app/components/modals/alert-actions/alert.service';
 
 @Component({
   selector: 'app-dialog',
@@ -34,7 +34,7 @@ export class DialogComponent implements OnInit {
       this.api.postUser(this.userForm.value)
       .subscribe({
         next:(res)=>{
-          this.alert.openAlert(`O produto ${res.name} foi adicionado com sucesso`, "Ok");
+          this.alert.openAlert(`O usuário ${res.name} foi adicionado com sucesso`, "Ok");
           this.userForm.reset()
           this.dialogRef.close()
         }

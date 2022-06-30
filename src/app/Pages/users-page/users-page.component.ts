@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../../modals/dialog-add-user/dialog.component';
-import { ApiService } from '../../../services/api.service';
+import { DialogComponent } from 'src/app/components/modals/dialog-add-user/dialog.component';
+import { ApiService } from 'src/app/services/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DialogEditUserComponent } from '../../modals/dialog-edit-user/dialog-edit-user.component';
+import { DialogEditUserComponent } from 'src/app/components/modals/dialog-edit-user/dialog-edit-user.component';
 import { User } from 'src/app/Types/Types';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from 'src/app/components/modals/alert-actions/alert.service';
 
 @Component({
   selector: 'app-users-page',

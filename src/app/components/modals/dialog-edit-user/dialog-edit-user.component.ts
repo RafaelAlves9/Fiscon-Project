@@ -2,7 +2,7 @@ import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from 'src/app/components/modals/alert-actions/alert.service';
 
 @Component({
   selector: 'app-dialog-edit-user',
@@ -32,7 +32,7 @@ export class DialogEditUserComponent implements OnInit {
       this.api.editUser(this.editForm.value)
       .subscribe({
         next:(res)=>{
-          this.alert.openAlert(`O produto ${res.name} foi editado com sucesso`, "Ok")
+          this.alert.openAlert(`O usuário ${res.name} foi editado com sucesso`, "Ok")
           this.dialogRef.close()
         }
       })

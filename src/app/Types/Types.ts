@@ -1,7 +1,7 @@
 export interface User {
     id: number
     name: string
-    tel: number
+    tel: string
     creationDate: Date
     updationDate: Date
 }
